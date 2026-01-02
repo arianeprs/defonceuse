@@ -19,6 +19,16 @@
       .transition-transform {
         transition: transform 0.3s ease-in-out;
       }
+
+      *::selection {
+        background: #D7DDFE;
+      }
+      *::-moz-selection {
+        background: #D7DDFE;
+      }
+      *::-webkit-selection {
+        background: #D7DDFE;
+      }
     </style>
   </head>
   <body class="bg-white text-black font-mono">
@@ -33,11 +43,15 @@
             </a>
           </div>
           
-          <div class="hidden md:flex space-x-8">
-            <a href="#home" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">Accueil</a>
+          <div class="hidden md:flex space-x-5 items-center">
             <a href="#about" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">À propos</a>
+            <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
             <a href="#events" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">Nos évènements</a>
+            <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
+            <a href="#association" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">L'association</a>
+            <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
             <a href="#gallery" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">Galerie</a>
+            <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
             <a href="#contact" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">Contact</a>
           </div>
           
@@ -50,9 +64,9 @@
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="fixed top-16 right-0 w-64 h-full bg-white border-t border-black menu-closed transition-transform md:hidden z-40">
         <div class="flex flex-col p-6 space-y-6">
-          <a href="#home" class="text-black hover:text-gray-600 transition-colors text-lg">Accueil</a>
           <a href="#about" class="text-black hover:text-gray-600 transition-colors text-lg">À propos</a>
           <a href="#events" class="text-black hover:text-gray-600 transition-colors text-lg">Nos évènements</a>
+          <a href="#association" class="text-black hover:text-gray-600 transition-colors text-lg">L'association</a>
           <a href="#gallery" class="text-black hover:text-gray-600 transition-colors text-lg">Galerie</a>
           <a href="#contact" class="text-black hover:text-gray-600 transition-colors text-lg">Contact</a>
         </div>
@@ -71,7 +85,7 @@
               <img src="img/defonceuse.svg" alt="La défonceuse" class="w-full max-w-2xl mx-auto md:mx-0">
             </h1>
             <p class="text-lg md:text-2xl text-gray-800 mb-8 max-w-2xl mx-auto md:mx-0 md:pl-4">
-              Café associatif et atelier de bricolage à Grenoble
+              Café associatif et atelier de bricolage <br>à Grenoble
             </p>
           </div>
           <div class="flex justify-center md:justify-end">
@@ -113,29 +127,36 @@ rencontres, d’événements culturels proposant des produits locaux et faits ma
       <div class="py-24 bg-[url('img/background-square.svg')] bg-cover bg-repeat">
         <div class="max-w-7xl mx-auto px-4 px-6 lg:px-8 my-8">
           <div class="grid md:grid-cols-3 gap-12 md:gap-8">
-            <div class="bg-white text-black p-8 border-2 border-black -rotate-2">
-              <h3 class="text-2xl font-bold mb-4">Qui sommes-nous ?</h3>
-              <p class="text-gray-800">
-                La Défonceuse, c’est un café atelier associatif favorisant l’autonomie, le réemploi et la
-                transmission de savoir-faire autour du bricolage.
-                <br><br>
-                C’est aussi un espace convivial de
-  rencontres, d’événements culturels proposant des produits locaux et faits maison.
-              </p>
+            <div>
+              <div class="bg-white text-black p-8 border-2 border-black -rotate-2">
+                <h3 class="text-2xl font-bold mb-4">Qui sommes-nous ?</h3>
+                <p class="text-gray-800">
+                  La Défonceuse, c’est un café atelier associatif favorisant l’autonomie, le réemploi et la
+                  transmission de savoir-faire autour du bricolage.
+                  <br><br>
+                  C’est aussi un espace convivial de
+    rencontres, d’événements culturels proposant des produits locaux et faits maison.
+                </p>
+              </div>
             </div>
-            <div class="bg-white text-black p-8 border-2 border-black rotate-1">
-              <h3 class="text-2xl font-bold mb-4">Le lieu</h3>
-              <p class="text-gray-800">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <mark><br>[help]</mark>
-              </p>
+            <div>
+              <div class="bg-white text-black p-8 border-2 border-black rotate-1">
+                <h3 class="text-2xl font-bold mb-4">Le café</h3>
+                <p class="text-gray-800">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br><br>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+                  <mark><br>[help]</mark>
+                </p>
+              </div>
             </div>
-            <div class="bg-white text-black p-8 border-2 border-black -rotate-2">
-              <h3 class="text-2xl font-bold mb-4">Le projet</h3>
-              <p class="text-gray-800">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                <mark><br>[help]</mark>
-              </p>
+            <div>
+              <div class="bg-white text-black p-8 border-2 border-black -rotate-2">
+                <h3 class="text-2xl font-bold mb-4">Les activités</h3>
+                <p class="text-gray-800">
+                  La défonceuse dispose d’un atelier bois, poterie, soudure et couture. Certains outils et
+  machines-outils nécessitent une formation préalable et une sensibilisation à leurs
+  risques propres.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -150,11 +171,67 @@ rencontres, d’événements culturels proposant des produits locaux et faits ma
           <img src="img/line-2.svg" class="w-50 mx-auto" aria-hidden="true">
         </div>
 
+        <p class="text-gray-800 w-2/3 mb-10">
+          Ici je sais pas si tu veux écrire un petit texte sur le types d'évènements que vous proposez, et le mail de contact s'il faut réserver ou quoi ? C'est pas obligé je peux supprimer cette partie. 
+          <mark><br>[help]</mark>
+        </p>
+
         <div class="border border-2 border-black mx-auto w-full">
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FStockholm&showPrint=0&showCalendars=0&showTabs=0&hl=fr&title=Calendrier%20de%20test%20Ariane&src=ZW4uZnJlbmNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%230b8043" 
         style="border-width:0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
         </div>
       </div>
+    </section>
+
+    <!-- Association Section -->
+    <section id="association" class="py-20 scroll-mt-16 bg-[#DED1BC]">
+      <div class="max-w-7xl mx-auto px-4 px-6 lg:px-8 my-8">
+        <div class="text-center mb-14 md:mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-2">L'association</h2>
+          <img src="img/line-2.svg" class="w-50 mx-auto" aria-hidden="true">
+        </div>
+        <p class="text-md text-gray-800 mb-6 md:mb-8">L'association se divise en deux parties: </p>
+      
+      
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4">
+          <div class="bg-white text-black p-8 border-2 border-black -rotate-1 md:-rotate-2 relative overflow-visible">
+            <p>
+              Une <b>partie atelier</b> réservée aux adhérent.e.s, ayant pour objectif de:
+                <br>
+                - faciliter l'indépendance des personnes détournées du bricolage de manière
+                systémique. 
+                <br>
+                - faciliter l'accès au bricolage aux personnes habitant en ville.
+                <br>
+                - faciliter le réemploi et la réparation (objets, vêtements).
+                <br>
+                - proposer un lieu d'échange et de transmission de savoir-faire.
+                <br>
+                - mettre à disposition des outils sur place.
+            </p>
+            <!-- <div class="absolute -bottom-20 right-2 w-32 text-gray-400 z-10 hidden md:block">
+              <img src="img/petite-defonceuse.png"  class="w-full max-w-2xl mx-auto md:mx-0">
+            </div> -->
+          </div>
+          <div class="bg-white text-black p-8 border-2 border-black rotate-2 md:rotate-3 relative overflow-visible">
+            <p>
+              Une <b>partie café-bar</b>, ouverte au public, ayant pour objectif de:
+                <br>
+                - proposer un lieu convivial, d'échange et de mélange générationnel et culturel.
+                <br>
+                - accueillir des débats, concerts, projections, conférences, réunions.
+                <br>
+                - proposer des boissons sourcées dans la région et de la petite restauration 100%
+                maison.
+            </p>
+            <!-- <div class="absolute -top-12 right-2 w-24 text-gray-400 z-10 hidden md:block">
+              <img src="img/coffee-cup.png" class="w-full max-w-2xl mx-auto md:mx-0">
+            </div> -->
+          </div>
+        </div>
+
+
+  </div>
     </section>
 
     <!-- Gallery Section -->
