@@ -42,13 +42,13 @@
           </div>
           
           <button id="menu-toggle" class="md:hidden p-2" aria-label="Toggle menu">
-            <img src="img/burger-icon.svg" alt="Menu" class="w-10 h-10">
+            <img id="menu-icon" src="img/burger-icon.svg" alt="Menu" class="w-10 h-10">
           </button>
         </div>
       </div>
       
       <!-- Mobile Menu -->
-      <div id="mobile-menu" class="fixed top-16 right-0 w-64 h-full bg-white border-l border-black menu-closed transition-transform md:hidden z-40">
+      <div id="mobile-menu" class="fixed top-16 right-0 w-64 h-full bg-white border-t border-black menu-closed transition-transform md:hidden z-40">
         <div class="flex flex-col p-6 space-y-6">
           <a href="#home" class="text-black hover:text-gray-600 transition-colors text-lg">Accueil</a>
           <a href="#about" class="text-black hover:text-gray-600 transition-colors text-lg">À propos</a>
@@ -303,6 +303,7 @@ rencontres, d’événements culturels proposant des produits locaux et faits ma
       const menuToggle = document.getElementById('menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       const menuOverlay = document.getElementById('menu-overlay');
+      const menuIcon = document.getElementById('menu-icon');
 
       menuToggle.addEventListener('click', () => {
         const isOpen = mobileMenu.classList.contains('menu-open');
@@ -311,10 +312,12 @@ rencontres, d’événements culturels proposant des produits locaux et faits ma
           mobileMenu.classList.remove('menu-open');
           mobileMenu.classList.add('menu-closed');
           menuOverlay.classList.add('hidden');
+          menuIcon.src = 'img/burger-icon.svg';
         } else {
           mobileMenu.classList.remove('menu-closed');
           mobileMenu.classList.add('menu-open');
           menuOverlay.classList.remove('hidden');
+          menuIcon.src = 'img/close-icon.svg';
         }
       });
 
@@ -323,6 +326,18 @@ rencontres, d’événements culturels proposant des produits locaux et faits ma
         mobileMenu.classList.remove('menu-open');
         mobileMenu.classList.add('menu-closed');
         menuOverlay.classList.add('hidden');
+        menuIcon.src = 'img/burger-icon.svg';
+      });
+
+      // Close menu when mobile menu links are clicked
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('menu-open');
+          mobileMenu.classList.add('menu-closed');
+          menuOverlay.classList.add('hidden');
+          menuIcon.src = 'img/burger-icon.svg';
+        });
       });
 
       // Photo Gallery Functionality
