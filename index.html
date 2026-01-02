@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>La défonceuse</title>
+    <title>La Défonceuse, café associatif et atelier de bricolage à Grenoble</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       /* Custom styles for smooth animations */
@@ -19,11 +19,15 @@
     </style>
   </head>
   <body class="bg-white text-black font-mono">
+
+    <!-- Nav and overlay -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-black">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex-shrink-0">
-            <img src="img/defonceuse.svg" alt="La défonceuse" class="h-8">
+            <a href="#home">
+              <img src="img/coffee-cup.png" alt="La défonceuse" class="h-12">
+            </a>
           </div>
           
           <div class="hidden md:flex space-x-8">
@@ -34,7 +38,7 @@
           </div>
           
           <button id="menu-toggle" class="md:hidden p-2" aria-label="Toggle menu">
-            <img src="img/burger-icon.svg" alt="Menu" class="w-8 h-8">
+            <img src="img/burger-icon.svg" alt="Menu" class="w-10 h-10">
           </button>
         </div>
       </div>
@@ -55,34 +59,39 @@
 
     <!-- Hero Section -->
     <section id="home" class="pt-16 min-h-screen flex items-center justify-center bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6">La défonceuse</h1>
-          <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Bienvenue sur notre site
-          </p>
-          <a href="#about" class="inline-block px-8 py-3 bg-black text-white hover:bg-gray-800 transition-colors">
-            En savoir plus
-          </a>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div class="grid md:grid-cols-2 items-center">
+          <div class="text-center md:text-left">
+            <h1 class="mb-6">
+              <img src="img/defonceuse.svg" alt="La défonceuse" class="w-full max-w-2xl mx-auto md:mx-0">
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto md:mx-0">
+              Café associatif et atelier de bricolage à Grenoble
+            </p>
+          </div>
+          <div class="flex justify-center md:justify-end">
+            <img src="img/petite-defonceuse.png" alt="illustration d'une défonceuse" class="w-full max-w-xs md:max-w-md">
+          </div>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <!-- <section id="about" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">À propos</h2>
-          <div class="w-24 h-1 bg-black mx-auto"></div>
+        <div class="text-center mb-10">
+          <h2 class="text-4xl md:text-4xl font-bold mb-4">Random title</h2>
+          <div class="w-48 h-1 bg-black mx-auto"></div>
         </div>
-        <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h3 class="text-2xl font-bold mb-4">Notre histoire</h3>
             <p class="text-gray-700 mb-4 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              C’est aussi un espace convivial de
+rencontres, d’événements culturels proposant des produits locaux et faits maison.
             </p>
             <p class="text-gray-700 leading-relaxed">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              C’est aussi un espace convivial de
+rencontres, d’événements culturels proposant des produits locaux et faits maison.
             </p>
           </div>
           <div class="bg-gray-100 p-8 border-2 border-black">
@@ -92,26 +101,29 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- Services Section -->
     <section id="services" class="py-24 bg-black bg-[url('img/background-square.svg')] bg-cover bg-repeat">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 px-6 lg:px-8">
        
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white text-black p-8 border-2 border-black">
-            <h3 class="text-2xl font-bold mb-4">Service 1</h3>
+        <div class="grid md:grid-cols-3 gap-12 md:gap-8">
+          <div class="bg-white text-black p-8 border-2 border-black -rotate-2">
+            <h3 class="text-2xl font-bold mb-4">C'est quoi ?</h3>
             <p class="text-gray-700">
-              Description du premier service que vous proposez à vos clients.
+              La Défonceuse, c’est un café atelier associatif favorisant l’autonomie, le réemploi et la
+              transmission de savoir-faire autour du bricolage.
+              <br><br>
+              C’est aussi un espace convivial de
+rencontres, d’événements culturels proposant des produits locaux et faits maison.
             </p>
           </div>
-          <div class="bg-white text-black p-8 border-2 border-black">
+          <div class="bg-white text-black p-8 border-2 border-black rotate-1">
             <h3 class="text-2xl font-bold mb-4">Service 2</h3>
             <p class="text-gray-700">
               Description du deuxième service que vous proposez à vos clients.
             </p>
           </div>
-          <div class="bg-white text-black p-8 border-2 border-black">
+          <div class="bg-white text-black p-8 border-2 border-black -rotate-2">
             <h3 class="text-2xl font-bold mb-4">Service 3</h3>
             <p class="text-gray-700">
               Description du troisième service que vous proposez à vos clients.
@@ -121,7 +133,7 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="py-20 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -148,7 +160,7 @@
       </div>
     </section>
 
-    <!-- Where to Find Us Section -->
+    <!-- Where to Find Us -->
     <section id="where-to-find-us" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
