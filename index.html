@@ -7,6 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       /* Custom styles for smooth animations */
+      html {
+        scroll-behavior: smooth;
+      }
       .menu-open {
         transform: translateX(0);
       }
@@ -34,6 +37,7 @@
             <a href="#home" class="text-black hover:text-gray-600 transition-colors">Accueil</a>
             <a href="#about" class="text-black hover:text-gray-600 transition-colors">À propos</a>
             <a href="#services" class="text-black hover:text-gray-600 transition-colors">Services</a>
+            <a href="#gallery" class="text-black hover:text-gray-600 transition-colors">Galerie</a>
             <a href="#contact" class="text-black hover:text-gray-600 transition-colors">Contact</a>
           </div>
           
@@ -49,6 +53,7 @@
           <a href="#home" class="text-black hover:text-gray-600 transition-colors text-lg">Accueil</a>
           <a href="#about" class="text-black hover:text-gray-600 transition-colors text-lg">À propos</a>
           <a href="#services" class="text-black hover:text-gray-600 transition-colors text-lg">Services</a>
+          <a href="#gallery" class="text-black hover:text-gray-600 transition-colors text-lg">Galerie</a>
           <a href="#contact" class="text-black hover:text-gray-600 transition-colors text-lg">Contact</a>
         </div>
       </div>
@@ -128,6 +133,87 @@ rencontres, d’événements culturels proposant des produits locaux et faits ma
             <p class="text-gray-700">
               Description du troisième service que vous proposez à vos clients.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 scroll-mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Galerie</h2>
+          <div class="w-28 h-1 bg-black mx-auto"></div>
+        </div>
+        
+        <div class="relative max-w-4xl mx-auto">
+          <!-- Main Image Display -->
+          <div class="relative bg-white border-2 border-black overflow-hidden">
+            <img 
+              id="gallery-main-image" 
+              src="img/photos/1er etage.jpg" 
+              alt="Photo de la défonceuse" 
+              class="w-full h-auto object-cover transition-opacity duration-300"
+            >
+            
+            <!-- Navigation Buttons -->
+            <button 
+              id="gallery-prev" 
+              class="absolute  cursor-pointer left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black text-white p-3 hover:bg-white hover:text-black z-10"
+              aria-label="Photo précédente"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button 
+              id="gallery-next" 
+              class="absolute  cursor-pointer right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black text-white p-3 hover:bg-white hover:text-black z-10"
+              aria-label="Photo suivante"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Thumbnail Navigation -->
+          <div class="flex justify-center gap-4 mt-6 overflow-x-auto pb-2">
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="0"
+            >
+              <img src="img/photos/1er etage.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="1"
+            >
+              <img src="img/photos/comptoir 2.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="2"
+            >
+              <img src="img/photos/comptoir.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="3"
+            >
+              <img src="img/photos/déco2.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="4"
+            >
+              <img src="img/photos/la carte.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+          </div>
+          
+          <!-- Image Counter -->
+          <div class="text-center mt-4 text-gray-700">
+            <span id="gallery-counter">1 / 5</span>
           </div>
         </div>
       </div>
@@ -238,6 +324,75 @@ rencontres, d’événements culturels proposant des produits locaux et faits ma
         mobileMenu.classList.add('menu-closed');
         menuOverlay.classList.add('hidden');
       });
+
+      // Photo Gallery Functionality
+      const photos = [
+        'img/photos/1er etage.jpg',
+        'img/photos/comptoir 2.jpg',
+        'img/photos/comptoir.jpg',
+        'img/photos/déco2.jpg',
+        'img/photos/la carte.jpg'
+      ];
+      
+      let currentPhotoIndex = 0;
+      const mainImage = document.getElementById('gallery-main-image');
+      const prevButton = document.getElementById('gallery-prev');
+      const nextButton = document.getElementById('gallery-next');
+      const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+      const counter = document.getElementById('gallery-counter');
+      
+      function updateGallery() {
+        mainImage.src = photos[currentPhotoIndex];
+        mainImage.alt = `Photo ${currentPhotoIndex + 1} de la défonceuse`;
+        counter.textContent = `${currentPhotoIndex + 1} / ${photos.length}`;
+        
+        // Update thumbnail active state
+        thumbnails.forEach((thumb, index) => {
+          if (index === currentPhotoIndex) {
+            thumb.classList.add('ring-2', 'ring-black');
+            thumb.classList.remove('border-black');
+          } else {
+            thumb.classList.remove('ring-2', 'ring-black');
+            thumb.classList.add('border-black');
+          }
+        });
+      }
+      
+      function showNextPhoto() {
+        currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+        updateGallery();
+      }
+      
+      function showPrevPhoto() {
+        currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+        updateGallery();
+      }
+      
+      nextButton.addEventListener('click', showNextPhoto);
+      prevButton.addEventListener('click', showPrevPhoto);
+      
+      // Thumbnail click handlers
+      thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+          currentPhotoIndex = index;
+          updateGallery();
+        });
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        const gallerySection = document.getElementById('gallery');
+        if (gallerySection && window.scrollY >= gallerySection.offsetTop - 100) {
+          if (e.key === 'ArrowLeft') {
+            showPrevPhoto();
+          } else if (e.key === 'ArrowRight') {
+            showNextPhoto();
+          }
+        }
+      });
+      
+      // Initialize gallery
+      updateGallery();
     </script>
 
   </body>
