@@ -93,7 +93,6 @@
             </h1>
             <p class="text-lg md:text-2xl text-gray-800 mb-8 max-w-2xl mx-auto md:mx-0 md:pl-4">
               Café associatif et atelier de bricolage à Grenoble
-              <!-- TODO : bandeau mots clés : poterie bois soudure couture evenements culturels concerts -->
             </p>
           </div>
           <div class="flex justify-center md:justify-end">
@@ -158,11 +157,6 @@
           <img src="img/line-2.svg" class="w-50 mx-auto" aria-hidden="true">
         </div>
 
-        <!-- <p class="text-gray-800 md:w-2/3 mb-10">
-          
-        </p> -->
-
-
         <div class="border border-2 border-black mx-auto w-full">
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&showPrint=0&title=La%20D%C3%A9fonceuse&hl=fr&src=bGFkZWZvbmNldXNlQGxpbG8ub3Jn&color=%23039be5" 
         style="border-width:0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
@@ -177,37 +171,29 @@
           <h2 class="text-4xl md:text-5xl font-bold mb-2">L'association</h2>
           <img src="img/line-2.svg" class="w-50 mx-auto" aria-hidden="true">
         </div>
-        <p class="text-md text-gray-800 mb-6 md:mb-8">L'association se divise en deux parties: </p>
-      
       
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-0">
           <div class="bg-white text-black p-8 border-2 border-black -rotate-1 md:-rotate-2 relative overflow-visible">
             <p>
-              Une <b>partie atelier</b> réservée aux adhérent.e.s, ayant pour objectif de:
+              <!-- TODO : fix layout -->
+              <h3>Comment adhérer à l'association ?</h3>
                 <br>
-                - faciliter l'indépendance des personnes détournées du bricolage de manière
-                systémique. 
-                <br>
-                - faciliter l'accès au bricolage aux personnes habitant en ville.
-                <br>
-                - faciliter le réemploi et la réparation (objets, vêtements).
-                <br>
-                - proposer un lieu d'échange et de transmission de savoir-faire.
-                <br>
-                - mettre à disposition des outils sur place.
+                Il y a plusieurs niveaux de cotisation qui correspondent à plusieurs niveaux de participation à l'association et aux situations financière de chacun.e. Les adhésions sont mises à jour et enregistrées sur place dans notre local. Elles sont valables sur une année civile.
             </p>
           </div>
-          <div class="bg-white text-black p-8 border-2 border-black rotate-2 md:rotate-3 relative overflow-visible">
+         <div class="bg-white text-black p-8 border-2 border-black -rotate-1 md:-rotate-2 relative overflow-visible">
             <p>
-              Une <b>partie café-bar</b>, ouverte au public, ayant pour objectif de:
+              <h3>Comment s'inscrire aux ateliers ? </h3>
                 <br>
-                - proposer un lieu convivial, d'échange et de mélange générationnel et culturel.
+                Il suffit d'envoyer un mail de pré-inscription à l'animateurice concerné.e, le mail étant précisé dans le descriptif de chaque atelier référencé dans l'agenda.  
+              </p>
+          </div>
+           <div class="bg-white text-black p-8 border-2 border-black -rotate-1 md:-rotate-2 relative overflow-visible">
+            <p>
+              <h3>Comment s’investir dans l’association ? </h3>
                 <br>
-                - accueillir des débats, concerts, projections, conférences, réunions.
-                <br>
-                - proposer des boissons sourcées dans la région et de la petite restauration 100%
-                maison.
-            </p>
+               L’association La Défonceuse recrute des bénévoles pour le café mais aussi ses ateliers de Poterie / Couture / Menuiserie / Soudage, pour un engagement adaptable, du statut d’animateur·ice ponctuel jusqu’à référent·e d’atelier  faisant partie intégrante de l’organisation de l’asso.  N’hésitez pas à nous contacter ! :-) 
+              </p>
           </div>
         </div>
 
@@ -225,12 +211,12 @@
         
         <div class="relative max-w-4xl mx-auto">
           <!-- Main Image Display -->
-          <div class="relative bg-white border-2 border-black overflow-hidden">
+          <div class="relative bg-white border-2 border-black overflow-hidden aspect-video">
             <img 
               id="gallery-main-image" 
-              src="img/photos/1er etage.jpg" 
+              src="img/photos/photo1.jpeg" 
               alt="Photo de la défonceuse" 
-              class="w-full h-auto object-cover transition-opacity duration-300"
+              class="w-full h-full object-contain transition-all duration-300 bg-[#DED1BC]"
             >
             
             <!-- Navigation Buttons -->
@@ -255,43 +241,75 @@
           </div>
           
           <!-- Thumbnail Navigation -->
-          <div class="flex justify-center gap-4 mt-6 overflow-x-auto pb-2">
+          <div class="flex justify-center gap-4 mt-6 px-10 overflow-x-auto pb-2">
+
+            <!-- TODO: show all thumbnails on desktop/mobile?  -->
             <button 
               class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
               data-index="0"
             >
-              <img src="img/photos/1er etage.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo1.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
             </button>
             <button 
               class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
               data-index="1"
             >
-              <img src="img/photos/comptoir 2.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo2.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
             </button>
             <button 
               class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
               data-index="2"
             >
-              <img src="img/photos/comptoir.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo3.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
             </button>
             <button 
               class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
               data-index="3"
             >
-              <img src="img/photos/déco2.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo4.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
             </button>
             <button 
               class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
               data-index="4"
             >
-              <img src="img/photos/la carte.jpg" alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo5.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
             </button>
-            <!-- TODO : remove -->
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="5"
+            >
+              <img src="img/photos/photo6.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="6"
+            >
+              <img src="img/photos/photo7.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="7"
+            >
+              <img src="img/photos/photo8.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="8"
+            >
+              <img src="img/photos/photo9.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
+            <button 
+              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              data-index="9"
+            >
+              <img src="img/photos/photo10.jpg"  alt="Thumbnail" class="w-full h-full object-cover">
+            </button>
           </div>
           
           <!-- Image Counter -->
           <div class="text-center mt-4 text-gray-800">
-            <span id="gallery-counter">1 / 5</span>
+            <span id="gallery-counter">1 / 10</span>
           </div>
         </div>
       </div>
@@ -318,20 +336,15 @@
             
             <div>
               <h3 class="text-2xl font-bold mb-4">Horaires d'ouverture</h3>
-              <h4 class="text-xl font-bold">Pour le café</h3>
-              <div class="space-y-2 text-gray-800">
-                <p><span class="font-bold">Mardi, mercredi, jeudi </span> 17h00 - 22h00</p>
-              </div>
-
-              <h4 class="text-xl font-bold">Pour les ateliers</h3>
-              <p>Consulter l'agenda <a href="#events" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">plus haut</a></p>
-              <mark><br>[help]</mark>
+              <p>Consulter l'agenda <a href="#events" class="text-black hover:underline decoration-4 decoration-[#DED1BC] underline-offset-4">plus haut</a></p>
             </div>
 
             <div>
               <h3 class="text-2xl font-bold mb-4">Contact</h3>
               <div class="space-y-2 text-gray-800">
                 <p><span class="font-bold">Mail :</span> ladefonceuse@lilo.org </p>
+                <p><span class="font-bold">Instagram :</span> @la_defonceuse </p>
+                <!-- TODO : add links -->
               </div>
             </div>
           </div>
@@ -405,11 +418,16 @@
 
       // Photo Gallery Functionality
       const photos = [
-        'img/photos/1er etage.jpg',
-        'img/photos/comptoir 2.jpg',
-        'img/photos/comptoir.jpg',
-        'img/photos/déco2.jpg',
-        'img/photos/la carte.jpg'
+        'img/photos/photo1.jpeg',
+        'img/photos/photo2.jpeg',
+        'img/photos/photo3.jpeg',
+        'img/photos/photo4.jpeg',
+        'img/photos/photo5.jpeg',
+        'img/photos/photo6.jpeg',
+        'img/photos/photo7.jpeg',
+        'img/photos/photo8.jpeg',
+        'img/photos/photo9.jpeg',
+        'img/photos/photo10.jpg'
       ];
       
       let currentPhotoIndex = 0;
