@@ -4,20 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>La Défonceuse - Café associatif et atelier de bricolage à Grenoble</title>
-    
-    
 
     <link rel="icon" href="https://ladefonceuse.fr/img/favicon.ico" />
     <link rel="apple-touch-icon" href="https://ladefonceuse.fr/img/apple-touch-icon.png">
     <link rel="apple-touch-icon-precomposed" href="https://ladefonceuse.fr/img/apple-touch-icon.png">
 
     <meta property="og:image" content="https://ladefonceuse.fr/img/la-defonceuse-no-text.png"/>
-     <meta property="og:title" content="La Défonceuse - Café associatif et atelier de bricolage à Grenoble">
+    <meta property="og:title" content="La Défonceuse - Café associatif et atelier de bricolage à Grenoble">
     <meta property="og:description" content="La Défonceuse, c'est un café atelier associatif favorisant l'autonomie, le réemploi et la transmission de savoir-faire autour du bricolage.">
     <meta name="title" content="La Défonceuse - Café associatif et atelier de bricolage à Grenoble">
     <meta name="description" content="La Défonceuse, c'est un café atelier associatif favorisant l'autonomie, le réemploi et la transmission de savoir-faire autour du bricolage.">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
+    <style type="text/tailwindcss">
       /* Custom styles for smooth animations */
       html {
         scroll-behavior: smooth;
@@ -32,14 +30,28 @@
         transition: transform 0.3s ease-in-out;
       }
 
-      *::selection {
+      *::selection, *::-moz-selection {
         background: #D7DDFE;
       }
-      *::-moz-selection {
-        background: #D7DDFE;
+
+      /* Repeated styles */
+      .link {
+        @apply text-black font-bold hover:underline decoration-4 decoration-[#DED1BC] underline-offset-4;
       }
-      *::-webkit-selection {
-        background: #D7DDFE;
+      .mobile-nav-link {
+        @apply text-black hover:text-gray-600 transition-colors text-lg;
+      }
+      .card {
+        @apply bg-white text-black p-8 border-2 border-black;
+      }
+      .section-header {
+        @apply text-center mb-14 md:mb-16;
+      }
+      .section-title {
+        @apply text-4xl md:text-5xl font-bold mb-2;
+      }
+      .gallery-thumbnail {
+        @apply cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black;
       }
     </style>
   </head>
@@ -56,15 +68,15 @@
           </div>
           
           <div class="hidden md:flex space-x-5 items-center">
-            <a href="#about" class="text-black hover:underline decoration-4 decoration-[#DED1BC] underline-offset-4">À propos</a>
+            <a href="#about" class="link">À propos</a>
             <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
-            <a href="#events" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">Nos évènements</a>
+            <a href="#events" class="link">Nos évènements</a>
             <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
-            <a href="#association" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">L'association</a>
+            <a href="#association" class="link">L'association</a>
             <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
-            <a href="#gallery" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">Galerie</a>
+            <a href="#gallery" class="link">Galerie</a>
             <img src="img/line-vertical.svg" class="h-6" aria-hidden="true">
-            <a href="#contact" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">Contact</a>
+            <a href="#contact" class="link">Contact</a>
           </div>
           
           <button id="menu-toggle" class="md:hidden p-2" aria-label="Toggle menu">
@@ -76,11 +88,11 @@
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="fixed top-16 right-0 w-full h-full bg-white border-t border-black menu-closed transition-transform md:hidden z-40">
         <div class="flex flex-col p-6 space-y-6 text-center">
-          <a href="#about" class="text-black hover:text-gray-600 transition-colors text-lg">À propos</a>
-          <a href="#events" class="text-black hover:text-gray-600 transition-colors text-lg">Nos évènements</a>
-          <a href="#association" class="text-black hover:text-gray-600 transition-colors text-lg">L'association</a>
-          <a href="#gallery" class="text-black hover:text-gray-600 transition-colors text-lg">Galerie</a>
-          <a href="#contact" class="text-black hover:text-gray-600 transition-colors text-lg">Contact</a>
+          <a href="#about" class="mobile-nav-link">À propos</a>
+          <a href="#events" class="mobile-nav-link">Nos évènements</a>
+          <a href="#association" class="mobile-nav-link">L'association</a>
+          <a href="#gallery" class="mobile-nav-link">Galerie</a>
+          <a href="#contact" class="mobile-nav-link">Contact</a>
         </div>
       </div>
     </nav>
@@ -107,10 +119,10 @@
     <!-- About section -->
     <section id="about" class="bg-[#DED1BC] py-5">
       <div class="py-24 bg-[url('img/background-square.svg')] bg-cover bg-repeat">
-        <div class="max-w-7xl mx-auto px-4 px-6 lg:px-8 my-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
           <div class="grid md:grid-cols-3 gap-12 md:gap-8">
             <div>
-              <div class="bg-white text-black p-8 border-2 border-black -rotate-1 md:-rotate-2">
+              <div class="card -rotate-1 md:-rotate-2">
                 <h3 class="text-2xl font-bold mb-4">Qui sommes-nous ?</h3>
                 <p class="text-gray-800">
                   La Défonceuse, c'est un café atelier associatif favorisant l'autonomie, le réemploi et la
@@ -125,19 +137,19 @@
               </div>
             </div>
             <div>
-              <div class="bg-white text-black p-8 border-2 border-black md:rotate-1">
+              <div class="card md:rotate-1">
                 <h3 class="text-2xl font-bold mb-4">L'atelier</h3>
                 <p class="text-gray-800">
                   L'atelier, réservé aux adhérent.e.s, dispose de machines à bois, poterie, soudure et couture. 
                   <br><br>
                   Ces machines sont à dispisition pour une utilisation en autonomie, mais des ateliers ponctuels sont aussi proposés.
                   <br><br>
-                  <a href="#association" class="text-black hover:underline decoration-4  decoration-[#DED1BC] underline-offset-4">> Comment devenir adhérent.e.s ?</a>
+                  <a href="#association" class="link">> Comment devenir adhérent.e.s ?</a>
                 </p>
               </div>
             </div>
             <div>
-              <div class="bg-white text-black p-8 border-2 border-black rotate-1 md:-rotate-2">
+              <div class="card rotate-1 md:-rotate-2">
                 <h3 class="text-2xl font-bold mb-4">Le café bar</h3>
                 <p class="text-gray-800">
                   La café-bar, ouvert au public, est un lieu convivial, d'échange et de mélange générationnel et culturel.
@@ -154,12 +166,12 @@
     <!-- Events Section -->
     <section id="events" class="py-20 bg-white scroll-mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14 md:mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-2">Nos évènements</h2>
+        <div class="section-header">
+          <h2 class="section-title">Nos évènements</h2>
           <img src="img/line-2.svg" class="w-50 mx-auto" aria-hidden="true">
         </div>
 
-        <div class="border border-2 border-black mx-auto w-full">
+        <div class="border-2 border-black mx-auto w-full">
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&showPrint=0&title=La%20D%C3%A9fonceuse&hl=fr&src=bGFkZWZvbmNldXNlQGxpbG8ub3Jn&color=%23039be5" 
         style="border-width:0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
         </div>
@@ -168,26 +180,26 @@
 
     <!-- Association Section -->
     <section id="association" class="py-16 scroll-mt-16 bg-[#DED1BC]">
-      <div class="max-w-7xl mx-auto px-4 px-6 lg:px-8 my-8">
-        <div class="text-center mb-14 md:mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-2">L'association</h2>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+        <div class="section-header">
+          <h2 class="section-title">L'association</h2>
           <img src="img/line-2.svg" class="w-50 mx-auto" aria-hidden="true">
         </div>
       
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6">
-          <div class="bg-white text-black p-8 border-2 border-black -rotate-0.5 md:-rotate-1 relative overflow-visible">
+          <div class="card -rotate-0.5 md:-rotate-1 relative overflow-visible">
             <p>
               <h3 class="font-bold mb-4">Comment adhérer à l'association ?</h3>
                 Il y a plusieurs niveaux de cotisation qui correspondent à plusieurs niveaux de participation à l'association et aux situations financière de chacun.e. <br> Les adhésions sont mises à jour et enregistrées sur place dans notre local. <br> Elles sont valables sur une année civile
             </p>
           </div>
-         <div class="bg-white text-black p-8 border-2 border-black -rotate-1 md:rotate-2 relative overflow-visible">
+         <div class="card -rotate-1 md:rotate-2 relative overflow-visible">
             <p>
               <h3 class="font-bold mb-4">Comment s'inscrire aux ateliers ? </h3>
                 Il suffit d'envoyer un mail de pré-inscription à l'animateurice concerné.e, le mail étant précisé dans le descriptif de chaque atelier référencé dans l'agenda.  
               </p>
           </div>
-           <div class="bg-white text-black p-8 border-2 border-black rotate-1 md:rotate-0.5 relative overflow-visible">
+           <div class="card rotate-1 md:rotate-0.5 relative overflow-visible">
             <p>
               <h3 class="font-bold mb-4">Comment s’investir dans l’association ? </h3>
                L’association La Défonceuse recrute des bénévoles pour le café <br> mais aussi ses ateliers de Poterie / Couture / Menuiserie / Soudage, pour un engagement adaptable, du statut d’animateur·ice ponctuel jusqu’à référent·e d’atelier faisant partie intégrante de l’organisation de l’asso. <br> N’hésitez pas à nous contacter ! :-) 
@@ -202,8 +214,8 @@
     <!-- Gallery Section -->
     <section id="gallery" class="py-20 scroll-mt-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14 md:mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-2">Galerie</h2>
+        <div class="section-header">
+          <h2 class="section-title">Galerie</h2>
           <img src="img/line-3.svg" class="w-42 mx-auto" aria-hidden="true">
         </div>
         
@@ -220,7 +232,7 @@
             <!-- Navigation Buttons -->
             <button 
               id="gallery-prev" 
-              class="absolute cursor-pointer left-2 md: left-4 top-1/2 -translate-y-1/2 bg-black text-white p-3 hover:bg-white hover:text-black z-10"
+              class="absolute cursor-pointer left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black text-white p-3 hover:bg-white hover:text-black z-10"
               aria-label="Photo précédente"
             >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,7 +241,7 @@
             </button>
             <button 
               id="gallery-next" 
-              class="absolute  cursor-pointer right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black text-white p-3 hover:bg-white hover:text-black z-10"
+              class="absolute cursor-pointer right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black text-white p-3 hover:bg-white hover:text-black z-10"
               aria-label="Photo suivante"
             >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -241,67 +253,66 @@
           <!-- Thumbnail Navigation -->
           <div class="flex justify-center gap-4 mt-6 px-10 overflow-x-auto pb-2">
 
-            <!-- TODO: show all thumbnails on desktop/mobile?  -->
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="0"
             >
-              <img src="img/photos/photo1.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo1.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="1"
             >
-              <img src="img/photos/photo2.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo2.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="2"
             >
-              <img src="img/photos/photo3.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo3.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="3"
             >
-              <img src="img/photos/photo4.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo4.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="4"
             >
-              <img src="img/photos/photo5.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo5.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="5"
             >
-              <img src="img/photos/photo6.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo6.jpeg" alt="" class="w-full h-full object-cover">
             </button>
 
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="6"
             >
-              <img src="img/photos/photo7.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo7.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="7"
             >
-              <img src="img/photos/photo8.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo8.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="8"
             >
-              <img src="img/photos/photo9.jpeg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo9.jpeg" alt="" class="w-full h-full object-cover">
             </button>
             <button 
-              class="gallery-thumbnail cursor-pointer flex-shrink-0 w-20 h-20 border-2 border-black hover:border-gray-600 transition-colors overflow-hidden focus:outline-none focus:ring-2 focus:ring-black"
+              class="gallery-thumbnail"
               data-index="9"
             >
-              <img src="img/photos/photo10.jpg"  alt="Thumbnail" class="w-full h-full object-cover">
+              <img src="img/photos/photo10.jpg" alt="" class="w-full h-full object-cover">
             </button>
           </div>
           
@@ -316,8 +327,8 @@
     <!-- Contact section -->
     <section id="contact" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14 md:mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-2">Où nous trouver</h2>
+        <div class="section-header">
+          <h2 class="section-title">Où nous trouver</h2>
           <img src="img/line-1.svg" class="w-64 mx-auto" aria-hidden="true">
         </div>
         
@@ -334,15 +345,14 @@
             
             <div>
               <h3 class="text-2xl font-bold mb-4">Horaires d'ouverture</h3>
-              <p>Consulter l'agenda <a href="#events" class="text-black hover:underline decoration-4 decoration-[#DED1BC] underline-offset-4">plus haut</a></p>
+              <p>Consulter l'agenda <a href="#events" class="link">plus haut</a></p>
             </div>
 
             <div>
               <h3 class="text-2xl font-bold mb-4">Contact</h3>
               <div class="space-y-2 text-gray-800">
-                <p><span class="font-bold">Mail :</span> <a class="text-black hover:underline decoration-4 decoration-[#DED1BC] underline-offset-4" href="mailto:ladefonceuse@lilo.org">ladefonceuse@lilo.org</a></p>
-                <p><span class="font-bold">Instagram :</span> <a class="text-black hover:underline decoration-4 decoration-[#DED1BC] underline-offset-4" href="https://www.instagram.com/la_defonceuse" target="_blank">@la_defonceuse</a>  </p>
-                <!-- TODO : animate links -->
+                <p><span class="font-bold">Mail :</span> <a class="link" href="mailto:ladefonceuse@lilo.org">ladefonceuse@lilo.org</a></p>
+                <p><span class="font-bold">Instagram :</span> <a class="link" href="https://www.instagram.com/la_defonceuse" target="_blank">@la_defonceuse</a></p>
               </div>
             </div>
           </div>
@@ -372,6 +382,7 @@
     </footer>
 
     <script>
+      // MOBILE MENU TOGGLE SCRIPT
       const menuToggle = document.getElementById('menu-toggle');
       const coffeeCup = document.getElementById('coffee-cup');
       const mobileMenu = document.getElementById('mobile-menu');
@@ -409,12 +420,11 @@
         link.addEventListener('click', () => {
           mobileMenu.classList.remove('menu-open');
           mobileMenu.classList.add('menu-closed');
-          menuOverlay.classList.add('hidden');
           menuIcon.src = 'img/burger-icon.svg';
         });
       });
 
-      // Photo Gallery Functionality
+      // PHOTO GALLERY SCRIPT
       const photos = [
         'img/photos/photo1.jpeg',
         'img/photos/photo2.jpeg',
